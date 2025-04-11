@@ -1,5 +1,5 @@
 
-import type {Metadata} from 'next';
+import type {Metadata} from 'next/font';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import {Toaster} from "@/components/ui/toaster";
@@ -8,17 +8,17 @@ import localFont from 'next/font/local'
 const sfPro = localFont({
   src: [
     {
-      path: './assets/fonts/SF-Pro-Display-Regular.otf',
+      path: './assets/fonts/SF-Pro-Display-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './assets/fonts/SF-Pro-Display-Medium.otf',
+      path: './assets/fonts/SF-Pro-Display-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './assets/fonts/SF-Pro-Display-Bold.otf',
+      path: './assets/fonts/SF-Pro-Display-Bold.woff2',
       weight: '700',
       style: 'normal',
     },
