@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +95,30 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* Gradient animations */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animated-gradient {
+    background: linear-gradient(270deg, #008080, #333, #f0f0f0);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+
+  /* Transition styles */
+  .smooth-transition {
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 @layer base {
@@ -106,4 +129,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-

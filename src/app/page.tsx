@@ -4,7 +4,7 @@ import { SidebarProvider, Sidebar, SidebarContent } from "@/components/ui/sideba
 import DashboardContent from "@/components/dashboard/dashboard-content";
 import SidebarMenu from "@/components/dashboard/sidebar-menu";
 import React from "react";
-import {Card, CardContent, CardHeader, CardTitle, CardDescription} from "@/components/ui/card";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -12,6 +12,11 @@ import {Textarea} from "@/components/ui/textarea";
 import {Label} from "@/components/ui/label";
 import {useToast} from "@/hooks/use-toast";
 import {optimizeTradingStrategy} from "@/ai/flows/strategy-optimizer";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 
 interface TradingData {
   date: string;
@@ -72,12 +77,9 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
   };
 
   return (
-    <Card className="col-span-2">
+    <Card className="col-span-2 smooth-transition">
       <CardHeader>
         <CardTitle>AI Strategy Optimizer</CardTitle>
-        <CardDescription>
-          Enter your trading data and goals to get an optimized strategy.
-        </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         <form onSubmit={handleSubmit} className="grid gap-4">
@@ -141,44 +143,44 @@ export default function Home() {
       <SidebarContent>
         <div className="md:flex md:flex-col gap-4 p-4">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Card>
+            <Card className="smooth-transition">
               <CardHeader>
                 <CardTitle>Account Balance</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="animated-gradient">
                 <div className="text-2xl font-bold">${accountBalance.toLocaleString()}</div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="smooth-transition">
               <CardHeader>
                 <CardTitle>Open Positions</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="animated-gradient">
                 <div className="text-2xl font-bold">{openPositions}</div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="smooth-transition">
               <CardHeader>
                 <CardTitle>Total Trades</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="animated-gradient">
                 <div className="text-2xl font-bold">{totalTrades}</div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="smooth-transition">
               <CardHeader>
                 <CardTitle>Profit Factor</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="animated-gradient">
                 <div className="text-2xl font-bold">{profitFactor}</div>
               </CardContent>
             </Card>
           </div>
 
-          <Card className="col-span-2">
+          <Card className="col-span-2 smooth-transition">
             <CardHeader>
               <CardTitle>Performance Chart</CardTitle>
             </CardHeader>
@@ -202,3 +204,4 @@ export default function Home() {
     </SidebarProvider>
   );
 }
+
