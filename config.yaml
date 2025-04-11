@@ -1,0 +1,139 @@
+# Genel Ayarlar
+max_open_positions: 7  # Daha fazla fırsat yakalamak için artırıldı
+max_daily_trades: 25   # Günlük ticaret için daha fazla işlem kapasitesi
+trading_type: BOTH     # Her iki yönde de ticaret yapabilmek için
+quote_asset: USDT
+blacklist_symbols: []
+whitelist_symbols: []
+min_volume_usdt: 10000000  # Daha likit piyasalara odaklanmak için düşürüldü
+
+# Risk Yönetimi
+account_risk_per_trade: 1.5  # Biraz daha agresif ticaret için artırıldı
+max_account_risk: 8.0        # Toplam risk limitini artırdık
+max_drawdown: 12.0           # Günlük dalgalanmalar için biraz daha tolerans
+default_leverage: 5          # Varsayılan kaldıracı artırdık
+max_leverage: 15             # Maksimum kaldıracı artırdık
+auto_leverage: true          # Otomatik kaldıraç ayarı aktif
+margin_type: ISOLATED        # İzole marjin daha güvenli
+
+# Gelişmiş Risk Yönetimi
+adaptive_position_sizing: true   # Adaptif pozisyon boyutlandırma kesinlikle açık olmalı
+protection_mode_enabled: true    # Koruma modu aktif
+protection_mode_duration: 90     # Koruma modu süresi (dakika) - kısa vadeli için azaltıldı
+volatility_threshold: 3.5        # Aşırı volatilite için eşik değeri artırıldı
+rapid_drawdown_threshold: 6.0    # Hızlı drawdown eşiği biraz artırıldı
+position_change_rate_threshold: 350.0  # Pozisyon değişim oranı eşiği
+
+# Stop Loss ve Take Profit
+static_sl_percent: 2.5        # Stop loss biraz artırıldı
+trailing_sl: true             # Trailing stop kesinlikle açık
+trailing_sl_distance: 1.2     # Trailing stop mesafesi artırıldı
+trailing_sl_interval: 0.4     # Güncellemeler daha sık olabilir
+take_profit_targets: [1.0, 2.0, 3.5]  # Daha düşük ve gerçekçi TP hedefleri
+take_profit_quantities: [40, 30, 30]  # İlk hedefi daha yüksek yaptık
+
+# Kısmi Kapatma
+partial_close_enabled: true
+partial_close_threshold: 1.5   # Daha erken kâr alma (%)
+partial_close_percentage: 40.0  # Pozisyonun %40'ını kapat
+
+# Teknik Göstergeler
+primary_timeframe: 1h        # Günlük ticaret için ideal primer zaman dilimi
+secondary_timeframes: [15m, 4h, 1d]  # Kısa, orta ve uzun vadeli bakış için
+
+# Gösterge Ağırlıkları - Günlük ticarete uygun göstergelere daha fazla ağırlık verildi
+rsi_weight: 1.2
+macd_weight: 1.1
+bb_weight: 1.3        # Bollinger bantları kısa vadeli ticarette önemli
+ema_weight: 1.0
+stoch_weight: 1.2
+adx_weight: 0.9
+vpt_weight: 0.7
+obv_weight: 0.8
+ichimoku_weight: 0.7
+
+# RSI Ayarları
+rsi_length: 14
+rsi_overbought: 70.0
+rsi_oversold: 30.0
+
+# MACD Ayarları
+macd_fast: 12
+macd_slow: 26
+macd_signal: 9
+
+# Bollinger Bands Ayarları
+bb_length: 20
+bb_std_dev: 2.0
+
+# EMA Ayarları
+ema_short: 8     # Daha hızlı tepki için kısaltıldı
+ema_medium: 21
+ema_long: 50
+
+# Stochastic Ayarları
+stoch_k: 14
+stoch_d: 3
+stoch_overbought: 80.0
+stoch_oversold: 20.0
+
+# ADX Ayarları
+adx_length: 14
+adx_threshold: 23.0  # Trend belirleme eşiği düşürüldü
+
+# ATR Ayarları
+atr_length: 14
+atr_multiplier: 2.5  # Daha kısa vadeli volatilite için düşürüldü
+
+# Ichimoku Ayarları
+ichimoku_fast: 9
+ichimoku_med: 26
+ichimoku_slow: 52
+
+# İşlem Kriterleri - Daha fazla sinyal yakalamak için eşikler düşürüldü
+min_score_to_trade: 55.0
+score_threshold_long: 65.0
+score_threshold_short: 65.0
+
+# Zamanlama Kriterleri
+min_timing_score: 50.0    # Minimum giriş zamanlaması puanı
+timing_weight: 0.4        # Zamanlama puanının toplam karara etkisi
+timing_check_enabled: true
+
+# Otomatik Strateji Optimizasyonu
+strategy_optimization_enabled: true  # Otomatik optimizasyon aktif
+optimization_interval_hours: 6       # Optimizasyon aralığı (saat)
+optimization_min_trades: 10          # Optimizasyon için minimum işlem sayısı
+win_rate_threshold_low: 0.4          # Düşük kazanma oranı eşiği
+win_rate_threshold_high: 0.65        # Yüksek kazanma oranı eşiği
+
+# Piyasa Koşulları Adaptasyonu
+adaptive_params: true
+volatility_multiplier: 2.2
+trend_strength_factor: 1.2
+bearish_btc_affect: 0.6  # BTC düşüşünün etki faktörü
+market_condition_weight: 1.2
+
+# Zaman Bazlı Ayarlar
+trading_hours_only: false      # 24 saat ticaret aktif
+trading_hours_start: 9         # UTC saat
+trading_hours_end: 17          # UTC saat
+weekend_mode: NORMAL     # Hafta sonu azaltılmış risk
+
+# Funding Rate - Kritik öneme sahip
+avoid_high_funding: true
+funding_rate_threshold: 0.0008  # Funding rate eşiği - günlük kazanç için önemli
+
+# Performans Eşikleri
+profit_threshold_daily: 3.5  # Günlük kar hedefi (%)
+loss_threshold_daily: 5.0    # Günlük zarar limiti (%)
+
+# Pozisyon Yönetimi
+position_size_type: DYNAMIC  # Dinamik pozisyon boyutlandırma kullan
+fixed_position_size: 100.0   # USDT cinsinden (FIXED tipinde)
+
+# Log Ayarları
+debug_mode: false
+log_level: INFO
+check_interval: 60  # saniye
+health_check_interval: 3600  # saniye
