@@ -9,7 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { Card, CardBody, CardHeader } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, User, Bell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -91,7 +91,7 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
         <div>AI Strategy Optimizer</div>
         <div>Optimize your trading strategy with AI-powered analysis.</div>
       </CardHeader>
-      <CardBody>
+      <div className="p-6 pt-0">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="historicalData">Historical Data (CSV)</Label>
@@ -147,7 +147,7 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
             </div>
           </div>
         )}
-      </CardBody>
+      </div>
     </Card>
   );
 };
@@ -220,9 +220,9 @@ export default function Home() {
                   Current balance of your trading account
                 </div>
               </CardHeader>
-              <CardBody className="text-2xl font-bold">
+              <div className="p-6 pt-0 text-2xl font-bold">
                 ${accountBalance.toLocaleString()}
-              </CardBody>
+              </div>
             </Card>
 
             <Card className="bg-secondary text-secondary-foreground shadow-md rounded-xl smooth-transition hover:scale-105">
@@ -232,7 +232,7 @@ export default function Home() {
                   Number of currently open trading positions
                 </div>
               </CardHeader>
-              <CardBody className="text-2xl font-bold">{totalProfit}</CardBody>
+              <div className="p-6 pt-0 text-2xl font-bold">{totalProfit}</div>
             </Card>
 
             <Card className="bg-secondary text-secondary-foreground shadow-md rounded-xl smooth-transition hover:scale-105">
@@ -242,7 +242,7 @@ export default function Home() {
                   Total number of trades executed
                 </div>
               </CardHeader>
-              <CardBody className="text-2xl font-bold">{totalProduct}</CardBody>
+              <div className="p-6 pt-0 text-2xl font-bold">{totalProduct}</div>
             </Card>
 
             <Card className="bg-secondary text-secondary-foreground shadow-md rounded-xl smooth-transition hover:scale-105">
@@ -252,7 +252,7 @@ export default function Home() {
                   Ratio of gross profit to gross loss
                 </div>
               </CardHeader>
-              <CardBody className="text-2xl font-bold">{totalUsers}</CardBody>
+              <div className="p-6 pt-0 text-2xl font-bold">{totalUsers}</div>
             </Card>
           </div>
 
@@ -263,7 +263,7 @@ export default function Home() {
                 <div>Total Revenue</div>
                 <div>12.04.2022 - 12.05.2022</div>
               </CardHeader>
-              <CardBody>
+              <div className="p-6 pt-0">
                 <ResponsiveContainer width="100%" height={300}>
                   <AreaChart data={historicalTradingData}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -273,7 +273,7 @@ export default function Home() {
                     <Area type="monotone" dataKey="value" stroke="#8884d8" fill="#8884d8" />
                   </AreaChart>
                 </ResponsiveContainer>
-              </CardBody>
+              </div>
             </Card>
 
             <Card className="shadow-md rounded-xl smooth-transition hover:scale-105">
@@ -281,7 +281,7 @@ export default function Home() {
                 <div>Profit this week</div>
                 <div>This Week</div>
               </CardHeader>
-              <CardBody>
+              <div className="p-6 pt-0">
                 <ResponsiveContainer width="100%" height={300}>
                   <AreaChart data={profitThisWeekData}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -291,7 +291,7 @@ export default function Home() {
                     <Area type="monotone" dataKey="sales" stroke="#8884d8" fill="#8884d8" />
                   </AreaChart>
                 </ResponsiveContainer>
-              </CardBody>
+              </div>
             </Card>
           </div>
 
