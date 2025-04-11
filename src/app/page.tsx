@@ -8,12 +8,8 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "@recharts/react";
+} from "recharts";
 import { Card, CardBody, CardHeader } from "@/components/ui/card";
-import {
-  Title,
-  Text,
-} from "@tremor/react";
 import { Search, User, Bell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -23,11 +19,6 @@ import { useToast } from "@/hooks/use-toast";
 import { optimizeTradingStrategy } from "@/ai/flows/strategy-optimizer";
 import React from "react";
 
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import {
   Sidebar,
   SidebarContent,
@@ -97,8 +88,8 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
   return (
     <Card className="mt-6">
       <CardHeader>
-        <Title>AI Strategy Optimizer</Title>
-        <Text>Optimize your trading strategy with AI-powered analysis.</Text>
+        <div>AI Strategy Optimizer</div>
+        <div>Optimize your trading strategy with AI-powered analysis.</div>
       </CardHeader>
       <CardBody>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -143,16 +134,16 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
         {suggestedStrategy && (
           <div className="mt-4 space-y-4">
             <div>
-              <Title>Suggested Strategy</Title>
-              <Text>{suggestedStrategy}</Text>
+              <div>Suggested Strategy</div>
+              <div>{suggestedStrategy}</div>
             </div>
             <div>
-              <Title>Rationale</Title>
-              <Text>{rationale}</Text>
+              <div>Rationale</div>
+              <div>{rationale}</div>
             </div>
             <div>
-              <Title>Risk Assessment</Title>
-              <Text>{riskAssessment}</Text>
+              <div>Risk Assessment</div>
+              <div>{riskAssessment}</div>
             </div>
           </div>
         )}
@@ -214,21 +205,9 @@ export default function Home() {
               <Button variant="ghost" size="icon">
                 <Bell className="h-5 w-5" />
               </Button>
-              <HoverCard>
-                <HoverCardTrigger>
-                  <Button variant="ghost" size="icon">
-                    <User className="h-5 w-5" />
-                  </Button>
-                </HoverCardTrigger>
-                <HoverCardContent>
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium">Thomas Anree</p>
-                    <p className="text-xs text-muted-foreground">
-                      UX Designer
-                    </p>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
+              <Button variant="ghost" size="icon">
+                <User className="h-5 w-5" />
+              </Button>
             </div>
           </div>
 
@@ -236,10 +215,10 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mt-4">
             <Card className="bg-secondary text-secondary-foreground shadow-md rounded-xl smooth-transition hover:scale-105">
               <CardHeader>
-                <Title className="text-lg font-semibold">Total views</Title>
-                <Text className="text-sm text-muted-foreground">
+                <div className="text-lg font-semibold">Total views</div>
+                <div className="text-sm text-muted-foreground">
                   Current balance of your trading account
-                </Text>
+                </div>
               </CardHeader>
               <CardBody className="text-2xl font-bold">
                 ${accountBalance.toLocaleString()}
@@ -248,30 +227,30 @@ export default function Home() {
 
             <Card className="bg-secondary text-secondary-foreground shadow-md rounded-xl smooth-transition hover:scale-105">
               <CardHeader>
-                <Title className="text-lg font-semibold">Total Profit</Title>
-                <Text className="text-sm text-muted-foreground">
+                <div className="text-lg font-semibold">Total Profit</div>
+                <div className="text-sm text-muted-foreground">
                   Number of currently open trading positions
-                </Text>
+                </div>
               </CardHeader>
               <CardBody className="text-2xl font-bold">{totalProfit}</CardBody>
             </Card>
 
             <Card className="bg-secondary text-secondary-foreground shadow-md rounded-xl smooth-transition hover:scale-105">
               <CardHeader>
-                <Title className="text-lg font-semibold">Total Product</Title>
-                <Text className="text-sm text-muted-foreground">
+                <div className="text-lg font-semibold">Total Product</div>
+                <div className="text-sm text-muted-foreground">
                   Total number of trades executed
-                </Text>
+                </div>
               </CardHeader>
               <CardBody className="text-2xl font-bold">{totalProduct}</CardBody>
             </Card>
 
             <Card className="bg-secondary text-secondary-foreground shadow-md rounded-xl smooth-transition hover:scale-105">
               <CardHeader>
-                <Title className="text-lg font-semibold">Total Users</Title>
-                <Text className="text-sm text-muted-foreground">
+                <div className="text-lg font-semibold">Total Users</div>
+                <div className="text-sm text-muted-foreground">
                   Ratio of gross profit to gross loss
-                </Text>
+                </div>
               </CardHeader>
               <CardBody className="text-2xl font-bold">{totalUsers}</CardBody>
             </Card>
@@ -281,8 +260,8 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2 mt-4">
             <Card className="shadow-md rounded-xl smooth-transition hover:scale-105">
               <CardHeader>
-                <Title>Total Revenue</Title>
-                <Text>12.04.2022 - 12.05.2022</Text>
+                <div>Total Revenue</div>
+                <div>12.04.2022 - 12.05.2022</div>
               </CardHeader>
               <CardBody>
                 <ResponsiveContainer width="100%" height={300}>
@@ -299,8 +278,8 @@ export default function Home() {
 
             <Card className="shadow-md rounded-xl smooth-transition hover:scale-105">
               <CardHeader>
-                <Title>Profit this week</Title>
-                <Text>This Week</Text>
+                <div>Profit this week</div>
+                <div>This Week</div>
               </CardHeader>
               <CardBody>
                 <ResponsiveContainer width="100%" height={300}>
