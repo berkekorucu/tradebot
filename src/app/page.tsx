@@ -4,7 +4,7 @@ import { SidebarProvider, Sidebar, SidebarContent } from "@/components/ui/sideba
 import DashboardContent from "@/components/dashboard/dashboard-content";
 import SidebarMenu from "@/components/dashboard/sidebar-menu";
 import React from "react";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardHeader, CardTitle, CardDescription} from "@/components/ui/card";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
