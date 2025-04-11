@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "SF Pro Display", sans-serif;
-}
 
 @layer base {
   :root {

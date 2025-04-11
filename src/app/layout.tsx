@@ -1,29 +1,29 @@
 
+import '../globals.css';
 import type {Metadata} from 'next/font';
 import {Geist, Geist_Mono} from 'next/font/google';
-import './globals.css';
 import {Toaster} from "@/components/ui/toaster";
 import localFont from 'next/font/local'
+
 
 const sfPro = localFont({
   src: [
     {
-      path: './static/fonts/SF-Pro-Display-Regular.woff2',
+      path: '../static/fonts/SF-Pro-Display-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './static/fonts/SF-Pro-Display-Medium.woff2',
+      path: '../static/fonts/SF-Pro-Display-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './static/fonts/SF-Pro-Display-Bold.woff2',
+      path: '../static/fonts/SF-Pro-Display-Bold.woff2',
       weight: '700',
       style: 'normal',
     },
   ],
-  variable: '--font-sf-pro-display',
 })
 
 const geistSans = Geist({
