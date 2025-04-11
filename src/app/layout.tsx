@@ -8,17 +8,17 @@ import localFont from 'next/font/local'
 const sfPro = localFont({
   src: [
     {
-      path: './assets/fonts/SF-Pro-Display-Regular.woff2',
+      path: './static/fonts/SF-Pro-Display-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './assets/fonts/SF-Pro-Display-Medium.woff2',
+      path: './static/fonts/SF-Pro-Display-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './assets/fonts/SF-Pro-Display-Bold.woff2',
+      path: './static/fonts/SF-Pro-Display-Bold.woff2',
       weight: '700',
       style: 'normal',
     },

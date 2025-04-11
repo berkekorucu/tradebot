@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   distDir: 'dist',
+  assetPrefix: '.',
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(woff|woff2|otf)$/,
