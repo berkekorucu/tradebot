@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
           loader: 'file-loader',
           options: {
             outputPath: 'static/fonts',
-            publicPath: '/_next/static/fonts',
+            publicPath: './_next/static/fonts',
             name: '[name].[ext]',
           },
         },
