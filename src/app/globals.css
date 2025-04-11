@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -41,6 +42,25 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* TradeWise Color Scheme */
+    --background: 0 0% 20%;       /* Dark gray (#333) */
+    --foreground: 0 0% 95%;       /* Light text for contrast */
+    --accent: 180 100% 25%;       /* Teal (#008080) */
+    --accent-foreground: 0 0% 100%; /* White text on teal */
+    --card: 0 0% 25%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 25%;
+    --popover-foreground: 0 0% 95%;
+    --secondary: 0 0% 94%;       /* Light gray (#f0f0f0) */
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 75%;
+    --muted-foreground: 0 0% 45.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 180 100% 25%;       /* Teal ring */
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -86,3 +106,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
