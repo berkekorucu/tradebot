@@ -3,6 +3,28 @@ import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import {Toaster} from "@/components/ui/toaster";
+import localFont from 'next/font/local'
+
+const sfPro = localFont({
+  src: [
+    {
+      path: './assets/fonts/SF-Pro-Display-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './assets/fonts/SF-Pro-Display-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './assets/fonts/SF-Pro-Display-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-sf-pro-display',
+})
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -26,11 +48,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${sfPro.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <Toaster />
       </body>
     </html>
   );
 }
+
 

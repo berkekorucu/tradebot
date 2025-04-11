@@ -32,11 +32,6 @@ const SidebarMenuComponent: React.FC = () => {
           <a href="/settings"><Settings /><span>Settings</span></a>
         </SidebarMenuButton>
       </SidebarMenuItem>
-       <SidebarMenuItem>
-        <SidebarMenuButton asChild tooltip="Calendar">
-          <a href="/calendar"><Calendar /><span>Calendar</span></a>
-        </SidebarMenuButton>
-      </SidebarMenuItem>
     </SidebarMenu>
   );
 };
