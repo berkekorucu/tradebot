@@ -4,7 +4,7 @@ import { SidebarProvider, Sidebar, SidebarContent } from "@/components/ui/sideba
 import DashboardContent from "@/components/dashboard/dashboard-content";
 import SidebarMenu from "@/components/dashboard/sidebar-menu";
 import React from "react";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardHeader, CardTitle, CardDescription} from "@/components/ui/card";
 import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -80,6 +80,9 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
     <Card className="col-span-2 smooth-transition">
       <CardHeader>
         <CardTitle>AI Strategy Optimizer</CardTitle>
+        <CardDescription>
+          Optimize your trading strategy with AI-powered analysis.
+        </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         <form onSubmit={handleSubmit} className="grid gap-4">
@@ -90,6 +93,7 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
               placeholder="Date,Open,High,Low,Close,Volume"
               value={historicalData}
               onChange={(e) => setHistoricalData(e.target.value)}
+              className="rounded-md shadow-sm focus-visible:ring-accent focus-visible:ring-offset-2"
             />
           </div>
           <div className="grid gap-2">
@@ -99,6 +103,7 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
               placeholder="Describe your current strategy"
               value={currentStrategy}
               onChange={(e) => setCurrentStrategy(e.target.value)}
+              className="rounded-md shadow-sm focus-visible:ring-accent focus-visible:ring-offset-2"
             />
           </div>
           <div className="grid gap-2">
@@ -108,19 +113,28 @@ const StrategyOptimizer: React.FC<StrategyOptimizerProps> = () => {
               placeholder="Maximize profit, minimize risk, etc."
               value={optimizationGoals}
               onChange={(e) => setOptimizationGoals(e.target.value)}
+              className="rounded-md shadow-sm focus-visible:ring-accent focus-visible:ring-offset-2"
             />
           </div>
-          <Button type="submit">Optimize Strategy</Button>
+          <Button type="submit" className="bg-accent text-accent-foreground rounded-md shadow-md hover:bg-accent/80">
+            Optimize Strategy
+          </Button>
         </form>
 
         {suggestedStrategy && (
           <div className="mt-4 grid gap-4">
-            <h3>Suggested Strategy</h3>
-            <p>{suggestedStrategy}</p>
-            <h3>Rationale</h3>
-            <p>{rationale}</p>
-            <h3>Risk Assessment</h3>
-            <p>{riskAssessment}</p>
+            <div>
+              <h3 className="text-lg font-semibold">Suggested Strategy</h3>
+              <p className="text-sm text-muted-foreground">{suggestedStrategy}</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Rationale</h3>
+              <p className="text-sm text-muted-foreground">{rationale}</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Risk Assessment</h3>
+              <p className="text-sm text-muted-foreground">{riskAssessment}</p>
+            </div>
           </div>
         )}
       </CardContent>
@@ -143,46 +157,61 @@ export default function Home() {
       <SidebarContent>
         <div className="md:flex md:flex-col gap-4 p-4">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="smooth-transition">
+            <Card className="smooth-transition rounded-lg shadow-md">
               <CardHeader>
-                <CardTitle>Account Balance</CardTitle>
+                <CardTitle className="text-lg font-semibold">Account Balance</CardTitle>
+                <CardDescription className="text-sm text-muted-foreground">
+                  Current balance of your trading account
+                </CardDescription>
               </CardHeader>
-              <CardContent className="animated-gradient">
-                <div className="text-2xl font-bold">${accountBalance.toLocaleString()}</div>
+              <CardContent className="text-2xl font-bold">
+                ${accountBalance.toLocaleString()}
               </CardContent>
             </Card>
 
-            <Card className="smooth-transition">
+            <Card className="smooth-transition rounded-lg shadow-md">
               <CardHeader>
-                <CardTitle>Open Positions</CardTitle>
+                <CardTitle className="text-lg font-semibold">Open Positions</CardTitle>
+                <CardDescription className="text-sm text-muted-foreground">
+                  Number of currently open trading positions
+                </CardDescription>
               </CardHeader>
-              <CardContent className="animated-gradient">
-                <div className="text-2xl font-bold">{openPositions}</div>
+              <CardContent className="text-2xl font-bold">
+                {openPositions}
               </CardContent>
             </Card>
 
-            <Card className="smooth-transition">
+            <Card className="smooth-transition rounded-lg shadow-md">
               <CardHeader>
-                <CardTitle>Total Trades</CardTitle>
+                <CardTitle className="text-lg font-semibold">Total Trades</CardTitle>
+                <CardDescription className="text-sm text-muted-foreground">
+                  Total number of trades executed
+                </CardDescription>
               </CardHeader>
-              <CardContent className="animated-gradient">
-                <div className="text-2xl font-bold">{totalTrades}</div>
+              <CardContent className="text-2xl font-bold">
+                {totalTrades}
               </CardContent>
             </Card>
 
-            <Card className="smooth-transition">
+            <Card className="smooth-transition rounded-lg shadow-md">
               <CardHeader>
-                <CardTitle>Profit Factor</CardTitle>
+                <CardTitle className="text-lg font-semibold">Profit Factor</CardTitle>
+                <CardDescription className="text-sm text-muted-foreground">
+                  Ratio of gross profit to gross loss
+                </CardDescription>
               </CardHeader>
-              <CardContent className="animated-gradient">
-                <div className="text-2xl font-bold">{profitFactor}</div>
+              <CardContent className="text-2xl font-bold">
+                {profitFactor}
               </CardContent>
             </Card>
           </div>
 
-          <Card className="col-span-2 smooth-transition">
+          <Card className="col-span-2 smooth-transition rounded-lg shadow-md">
             <CardHeader>
-              <CardTitle>Performance Chart</CardTitle>
+              <CardTitle className="text-lg font-semibold">Performance Chart</CardTitle>
+              <CardDescription className="text-sm text-muted-foreground">
+                Visual representation of trading performance over time
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
@@ -204,4 +233,3 @@ export default function Home() {
     </SidebarProvider>
   );
 }
-
